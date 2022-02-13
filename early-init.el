@@ -44,3 +44,8 @@
 ;; see https://www.gnu.org/software/emacs/manual/html_node/emacs/Early-Init-File.html
 (add-hook 'window-setup-hook 'spacemacs/removes-gui-elements)
 (add-hook 'tty-setup-hook 'spacemacs/removes-gui-elements)
+
+;; Resolve stupid 'cl package warning? ;; https://github.com/kiwanami/emacs-epc/issues/35#issuecomment-773420321
+;; (require 'loadhist)
+;; (file-dependents (feature-file 'cl))
+(setq byte-compile-warnings '(cl-functions))
